@@ -4,21 +4,21 @@ describe('Auth Test',() => {
             cy.log('Переxод на страницу авторизации')
             cy.visit(data.main_url)
             cy.log('Ввод неверного логина')
-            cy.get('.form-error > span').type(data.wrong_login)
+            cy.get('.form-input--text').type(data.wrong_login)
 
             cy.log('Проверка что появился элемент сигнализирующий об ошибке')
-            cy.get('div[class="passp-form-field__error"]')
+            cy.get('.form-error > span')
             .should('exist')
 
             cy.log('Ввод неверного пароля')
-            cy.get('.form-error > span').type(data.wrong_password)
+            cy.get('.form-input--password').type(data.wrong_password)
 
             cy.log('Проверка что появился элемент сигнализирующий об ошибке')
-            cy.get('div[class="passp-form-field__error"]')
+            cy.get('.form-error > span')
             .should('exist')
 
             cy.log('Клик по кнопке "Войти"')
-            cy.get(':nth-child(3) > .button').click()
+            cy.get('.form__buttons > :nth-child(3)').click()
         });
     });
 });

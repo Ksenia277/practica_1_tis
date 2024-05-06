@@ -2,8 +2,8 @@
     "register_url": "https://dev.profteam.su/registration",
     "login_register": "kseni",
     "email_register": "ksenia@gmail.com",
-    "password_register": "Ksenia77",
-    "password_repeat_register": "Ksenia77",
+    "password_register": "Ksenia7",
+    "password_repeat_register": "Ksenia7",
     "surname_register": "Шахова",
     "name_register": "Ксения",
     "middle_name": "Александровна",
@@ -14,5 +14,8 @@
     "wrong_password_repeat_register": "ksen1",
     "wrong_surname_register": "Shahova7",
     "wrong_name_register": "Ksenia7",
-    "wrong_middle_name": "Alecsandrovna"
+    "wrong_middle_name": "Alecsandrovna",
+    "exists_login_register": "testerStudent",
+    "exists_email_register": "ksenia7gmail.com"
+
 }

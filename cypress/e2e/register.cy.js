@@ -26,9 +26,23 @@ describe('Register Test',() => {
 
             cy.log('Ввод отчества')
             cy.get(':nth-child(3) > .form-control--medium > .form-input--text').type(data.middle_name)
-            
+
             cy.log('Клик по кнопке "Войти"')
             cy.get(':nth-child(3) > .button').click()
+
+            cy.log('Проверка, что пользователь смог зарегистрироваться')
+            cy.url().should('equal', 'https://dev.profteam.su/account/main')
         });
     });
 });
+
+
+
+
+
+
+
+
+        
+
+

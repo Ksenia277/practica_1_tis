@@ -11,6 +11,9 @@ describe('Auth Test',() => {
 
             cy.log('Клик по кнопке "Войти"')
             cy.get(':nth-child(3) > .button').click()
+
+            cy.log('Проверка, что пользователь смог авторизоваться')
+            cy.url().should('equal', 'https://dev.profteam.su/account/main')
         });
     });
 });
