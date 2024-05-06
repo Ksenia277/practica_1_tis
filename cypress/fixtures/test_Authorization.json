@@ -1,0 +1,8 @@
+{
+    "main_url": "https://dev.profteam.su/login",
+    "login": "testerStudent",
+    "password": "Password1",
+
+    "wrong_login": "KKK KKK",
+    "wrong_password": "11 1"
+}
