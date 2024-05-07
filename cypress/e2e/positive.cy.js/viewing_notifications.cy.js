@@ -12,16 +12,14 @@ describe('Viewing test', () => {
 
             cy.log('Клик по кнопке "Войти"')
             cy.get(':nth-child(3) > .button').click()
-            cy.wait(2000)
+            cy.wait(1500)
 
             cy.log('Клик по кнопке "Уведомления"')
             cy.get('.header__nav > [href="/notification"]').click()
-            cy.wait(2000)
+            cy.wait(1500)
 
-            cy.log('Клик по радиокнопке "Просмотреть"')
-            cy.get(':nth-child(1) > .notification-list-item > .button').click()
-            cy.wait(2000)
-       
+            cy.log('Проверка, что пользователь смог перейти в раздел уведомлений')
+            cy.url().should('equal', 'https://dev.profteam.su/notification')
         });
     });
 });

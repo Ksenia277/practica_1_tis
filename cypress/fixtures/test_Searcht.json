@@ -1,0 +1,8 @@
+{
+    "url": "https://dev.profteam.su/login",
+    "login": "testerStudent",
+    "password": "Password1",
+    "vacancy_search": "Программист",
+
+    "non_vacancy_search": "vgb vgb"
+  }

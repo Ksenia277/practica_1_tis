@@ -4,5 +4,11 @@
     "password": "Password1",
     "company": "Спутник",
     "address": "Герцена 18",
-    "description": "ttgfhdh"
+    "description": "ttgfhdh",
+
+    "wrong_login": "tester Admin",
+    "wrong_password": "Pas sword1",
+    "wrong_company": "Спутник",
+    "wrong_address": "Герцена 18",
+    "wrong_description": "jgjfjddk"
   }
