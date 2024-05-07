@@ -13,12 +13,19 @@ describe('Reading Test',() => {
         cy.get('div[class="login-form__button"] button[type="submit"]').click()
         cy.wait(1500)
 
+        cy.log('Проверка, что пользователь смог авторизоваться')
+        cy.url().should('equal', 'https://dev.profteam.su/account/main')
+
         cy.get('.header__nav > [href="/notification"]').click()
         cy.log('Переxод на уведомления')
         cy.wait(1500)
         
         cy.log('Переход на определенное уведомление')
         cy.get(':nth-child(1) > .notification-list-item > .button').click()
+
+        cy.log('Проверка, что пользователь смог перейти на уведомления')
+        cy.url().should('equal', 'https://dev.profteam.su/notification')
+
         });
     });
 });
