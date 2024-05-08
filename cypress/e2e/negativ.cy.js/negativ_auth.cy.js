@@ -1,5 +1,5 @@
 describe('Auth Test',() => {
-    it ('None-existent login test and password',() => {
+    it ('Incorrectly entered login test',() => {
         cy.fixture('test_Authorization').then(data => {
             cy.log('Переxод на страницу авторизации')
             cy.visit(data.main_url)
@@ -11,7 +11,7 @@ describe('Auth Test',() => {
             .should('exist')
         });
     });
-    it ('None-existent login test and password',() => {
+    it ('Incorrectly entered password test',() => {
         cy.fixture('test_Authorization').then(data => {
             cy.log('Переxод на страницу авторизации')
             cy.visit(data.main_url)

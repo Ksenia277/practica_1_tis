@@ -1,5 +1,5 @@
 describe('Searcht Test',() => {
-    it ('None-existent searcht test',() => {
+    it ('A non-existent job test',() => {
         cy.fixture('test_Searcht').then(data => {
         cy.log('Переxод на страницу авторизации')
         cy.visit(data.url)
@@ -23,17 +23,6 @@ describe('Searcht Test',() => {
         cy.log('Проверка что появился элемент сигнализирующий об ошибке')
         cy.get('.vacancy-list__failed-loading')
         .should('exist')
-
-        cy.log('Клик по кнопке выбора(з/п)')
-        cy.get(':nth-child(3) > .radio-component__label').click()
-
-        cy.log('Клик по кнопке выбора(график работы)')
-        cy.get(':nth-child(3) > :nth-child(2) > .form-select__selected').click()
-        cy.get('.form-select__items > :nth-child(2)').click()
-
-        cy.log('Клик по кнопке выбора(тип занятости)')
-        cy.get(':nth-child(4) > :nth-child(2) > .form-select__selected').click()
-        cy.get('.form-select__items > :nth-child(2)').click()
         });
     });
 });

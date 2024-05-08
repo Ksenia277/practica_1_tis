@@ -1,5 +1,5 @@
 describe('Reading Test',() => {
-    it ('Reading notifications test',() => {
+    it ('Positive reading notifications test',() => {
         cy.fixture('test_Reading').then(data => {
         cy.log('Переxод на страницу авторизации')
         cy.visit(data.url)
@@ -13,15 +13,15 @@ describe('Reading Test',() => {
         cy.get('div[class="login-form__button"] button[type="submit"]').click()
         cy.wait(1500)
 
-        cy.get('.header__nav > [href="/notification"]').click()
         cy.log('Переxод на уведомления')
+        cy.get('.header__nav > [href="/notification"]').click()
         cy.wait(1500)
-
-        cy.log('Проверка, что пользователь смог перейти в раздел уведомлений')
-        cy.url().should('equal', 'https://dev.profteam.su/notification')
         
-        cy.log('Переход на определенное уведомление')
-        cy.get(':nth-child(1) > .notification-list-item > .button').click()
+        cy.log('Клик по ссылке "Прочитать все"')
+        cy.get('.notification-title > .link').click()
+
+        cy.log('Проверка, что уведомления прочтены')
+        cy.get('.notification-title > .notification-count').should('have.text', '0')
         });
     });
 });

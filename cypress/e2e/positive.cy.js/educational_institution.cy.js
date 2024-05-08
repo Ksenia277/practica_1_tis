@@ -1,5 +1,5 @@
-describe('Instit Test', () => {
-  it("Institution test", () => {
+describe('Institution Test', () => {
+  it("Positive institution test", () => {
       cy.fixture('test_Institution').then(data => {
           cy.log('Переход на страницу')
           cy.visit(data.url)
@@ -34,12 +34,15 @@ describe('Instit Test', () => {
           cy.log('Клик по кнопке "Добавить"')
           cy.get('.create-company-form__description-block > .button').click()
 
-          cy.log('Проверка, что пользователь смог подать заявку на роль учебного заведения')
-          cy.get(':nth-child(3) > .menu-item__item-name')
-          .should('exist')
-      })
-  })
-})
+          cy.log('Проверка, что пользователь смог перейти на страничку заявок')
+          cy.get(':nth-child(3) > .menu-item__item-name').should('exist')
+      });
+  });
+});
+
+
+
+    
 
 
 

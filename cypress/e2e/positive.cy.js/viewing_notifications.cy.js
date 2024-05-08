@@ -1,5 +1,5 @@
 describe('Viewing test', () => {
-    it("Viewing notifications test", () => {
+    it("Positive viewing notifications test", () => {
         cy.fixture('test_Viewing').then(data => {
             cy.log('Переход на страницу')
             cy.visit(data.url)
@@ -18,8 +18,11 @@ describe('Viewing test', () => {
             cy.get('.header__nav > [href="/notification"]').click()
             cy.wait(1500)
 
-            cy.log('Проверка, что пользователь смог перейти в раздел уведомлений')
-            cy.url().should('equal', 'https://dev.profteam.su/notification')
+            cy.log('Клик по кнопке "Просмотреть"')
+            cy.get(':nth-child(1) > .notification-list-item > .button').click()
+
+            cy.log('Проверка, что пользователь смог перейти на страничку вакансии')
+            cy.url().should('equal', 'https://dev.profteam.su/vacancy/103')
         });
     });
 });

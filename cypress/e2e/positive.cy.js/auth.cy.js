@@ -1,5 +1,5 @@
-describe('Auth Test',() => {
-    it ('Authorization test',() => {
+describe('Authorization Test',() => {
+    it ('Positive authorization test',() => {
         cy.fixture('test_Authorization').then(data => {
             cy.log('Переxод на страницу авторизации')
             cy.visit(data.main_url)

@@ -1,5 +1,5 @@
-describe('Register Test',() => {
-    it ('Registration test',() => {
+describe('Registeration Test',() => {
+    it ('Positive registration test',() => {
         cy.fixture('test_Registration').then(data => {
             cy.log('Переxод на страницу регистрации')
             cy.visit(data.register_url)

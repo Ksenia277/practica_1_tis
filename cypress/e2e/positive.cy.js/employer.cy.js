@@ -1,5 +1,5 @@
-describe('Emp Test', () => {
-    it("Employer test", () => {
+describe('Employer Test', () => {
+    it("Positive employer test", () => {
         cy.fixture('test_Employer').then(data => {
             cy.log('Переход на страницу')
             cy.visit(data.url)
@@ -35,7 +35,7 @@ describe('Emp Test', () => {
             cy.get('.create-company-form__description-block > .button').click()
   
             cy.log('Проверка, что пользователь смог подать заявку на роль Работодателя')
-            cy.get(':nth-child(3) > .menu-item__item-name')
+            cy.get(':nth-child(3) > .menu-item__item-name').should('exist')
         })
     })
   })
