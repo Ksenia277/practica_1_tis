@@ -3,11 +3,11 @@ describe('Register Test',() => {
         cy.fixture('test_Registration').then(data => {
             cy.log('Переxод на страницу регистрации')
             cy.visit(data.register_url)
-
+ 
             cy.log('Ввод неверного логина')
             cy.get(':nth-child(1) > :nth-child(1) > .form-control--medium > .form-input--text').type(data.wrong_login_register)
 
-            cy.log('Проверка, что появилась текст роли Студента')
+            cy.log('Проверка что появился элемент сигнализирующий об ошибке')
             cy.get(':nth-child(1) > :nth-child(1) > .form-error').should('have.text', 'Обязательное поле, символы латиницы, не содержит пробелы')
         });
     });
@@ -31,7 +31,7 @@ describe('Register Test',() => {
             cy.log('Клик по кнопке "Войти"')
             cy.get(':nth-child(4) > .button').click()
 
-            cy.log('Проверка, что появилась текст роли Студента')
+            cy.log('Проверка что появился элемент сигнализирующий об ошибке')
             cy.get(':nth-child(1) > :nth-child(1) > .form-error').should('have.text', 'Такое значение поля логин уже существует.')
         });
     });
@@ -46,7 +46,7 @@ describe('Register Test',() => {
             cy.log('Ввод неверного email')
             cy.get('.form-input--email').type(data.wrong_email_register)
 
-            cy.log('Проверка, что появилась текст роли Студента')
+            cy.log('Проверка что появился элемент сигнализирующий об ошибке')
             cy.get(':nth-child(1) > :nth-child(2) > .form-error').should('have.text', 'Обязательное поле, некорректная почта')
         });
     });
@@ -70,7 +70,7 @@ describe('Register Test',() => {
             cy.log('Клик по кнопке "Войти"')
             cy.get(':nth-child(4) > .button').click()
 
-            cy.log('Проверка, что появилась текст роли Студента')
+            cy.log('Проверка что появился элемент сигнализирующий об ошибке')
             cy.get(':nth-child(1) > :nth-child(2) > .form-error').should('have.text', 'Такое значение поля почта уже существует.')
         });
     });
